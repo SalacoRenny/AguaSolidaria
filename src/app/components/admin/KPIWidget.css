@@ -1,0 +1,22 @@
+.kpi-widget {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .kpi-widget h3 {
+    color: #00cc99;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .kpi-widget p {
+    font-size: 2em;
+    color: #fff;
+  }
+  

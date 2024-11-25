@@ -1,0 +1,50 @@
+NO CREEN ESTILOS UNIVERSALES, ASI SE VEN LOS ESTILOS UNIVERSALES QUE AFECTAN A TODO EL PROYECTO Y AFECTA AL DISENO
+DE OTROS SCRIPTS:
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegúrate de que el body y el html ocupen todo el alto */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+COMO DEBERIA ESTAR:  ./ / /  / . / /.. /. / ./ ./ ./.  /. /. /. / ./ ./ ./ / ./ ./ ./ ./ . /. /. / /. ./ . / / /./zzZ
+
+.nombredel-contenedor * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegúrate de que el body y el html ocupen todo el alto */
+.nombredel-contenedor html, .nombredel-contenedor body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos generales de la página */
+.nombredel-contenedor .container {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Alinea el contenido centrado horizontalmente */
+  align-items: flex-start; /* Alinea hacia la parte superior */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+  border-radius: 12px; /* Bordes redondeados */
+}

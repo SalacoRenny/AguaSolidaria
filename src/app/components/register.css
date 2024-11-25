@@ -1,0 +1,74 @@
+/* Fondo con la imagen */
+.register-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../app/assets/cisternasbg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Estilos de la tarjeta de registro */
+  .register-card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Título de la aplicación */
+  .register-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  /* Estilos de los campos de entrada */
+  .register-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+  }
+  
+  .register-card input::placeholder {
+    color: #bbb;
+  }
+  
+  /* Estilos del botón de registro */
+  .register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff416c;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background-color: #ff4b2b;
+  }
+  
+  /* Mensaje de error */
+  .error-message {
+    color: #ff4b2b;
+    margin-bottom: 10px;
+  }
+  
+
+  /* Mensaje de éxito */
+.success-message {
+    color: #4caf50;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  

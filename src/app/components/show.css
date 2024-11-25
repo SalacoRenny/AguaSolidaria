@@ -1,0 +1,119 @@
+/* Restablecer los márgenes y paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegúrate de que el body y el html ocupen todo el alto */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo del menú superior */
+.menu {
+  background-color: rgb(74, 193, 224); /* Color de fondo */
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 10px 20px; /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  width: 100%; /* Ocupa todo el ancho */
+  position: fixed; /* Fijo en la parte superior */
+  top: 0; /* Pegado a la parte superior */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+/* Estilo del logo en el menú */
+.menu img {
+  width: 50px; /* Ajusta el tamaño del logo */
+  margin-right: 20px; /* Espacio entre el logo y los enlaces */
+}
+
+/* Estilo de los enlaces del menú */
+.menu button {
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: white; /* Color del texto */
+  margin-left: 20px; /* Espaciado entre botones */
+  cursor: pointer; /* Cambia el cursor a mano */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Efecto hover */
+.menu button:hover {
+  text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+
+/* Contenedor principal */
+.container {
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: flex-start; /* Alinea al inicio en el eje vertical */
+  background: url('../assets/imagenCristo.jpg') no-repeat center center fixed; /* Fondo con imagen */
+  background-size: cover;
+  padding-top: 20px; /* Espacio desde la parte superior */
+}
+
+/* Estilos de la tarjeta de productos */
+.row {
+  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para la tarjeta */
+  padding: 40px; /* Espacio interno */
+  border-radius: 12px; /* Esquinas redondeadas */
+  text-align: center; /* Centrado del texto */
+  color: white; /* Color del texto */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra */
+  max-width: 600px; /* Tamaño máximo de la tarjeta */
+  width: 100%; /* Ocupa el 100% del ancho */
+}
+
+/* Estilo del botón de crear */
+.btn-secondary {
+  background-color: #ff416c; /* Color del botón */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espacio interno */
+  border: none; /* Sin borde */
+  border-radius: 8px; /* Esquinas redondeadas */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición al pasar el mouse */
+}
+
+.btn-secondary:hover {
+  background-color: #ff4b2b; /* Color al pasar el mouse */
+}
+
+/* Estilos de la tabla */
+.table {
+  width: 100%; /* Asegura que la tabla ocupe el 100% */
+  margin-top: 20px; /* Espacio superior */
+  border-collapse: collapse; /* Colapsar bordes */
+}
+
+/* Estilos de los encabezados de la tabla */
+.table thead {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo de encabezados */
+}
+
+.table th, .table td {
+  padding: 15px; /* Espacio interno */
+  text-align: center; /* Centrado del texto */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea inferior */
+}
+
+/* Estilo de las filas de la tabla al pasar el mouse */
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo al pasar el mouse */
+}
+
+/* Mensaje de error (opcional) */
+.error-message {
+  color: #ff4b2b; /* Color del mensaje de error */
+  margin-bottom: 15px;
+  font-weight: bold; /* Destacar el mensaje */
+}

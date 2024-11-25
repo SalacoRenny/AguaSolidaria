@@ -1,0 +1,101 @@
+/* Contenedor principal */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url('../../assets/imagenCristo.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(90deg, #00b4d8, #0077b6);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out; /* Animación para mostrar u ocultar */
+}
+
+
+
+/* Ocultar sidebar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); /* Mueve el sidebar fuera de la pantalla */
+  }
+
+  .dashboard-container.has-sidebar .main-content {
+    margin-left: 0; /* Ajusta el contenido principal */
+  }
+}
+
+/* Mostrar sidebar al hacer hover (opcional) */
+@media (max-width: 768px) {
+  .sidebar:hover {
+    transform: translateX(0); /* Vuelve a aparecer cuando el mouse pasa encima */
+  }
+}
+
+/* Para pantallas grandes */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0); /* Sidebar visible normalmente */
+  }
+
+  .dashboard-container.has-sidebar .main-content {
+    margin-left: 250px;
+  }
+}
+
+/* Contenido principal */
+.dashboard-container.has-sidebar .main-content {
+  margin-left: 250px;
+}
+
+/* Estilos del header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.search-bar input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.logout-button {
+  background-color: #00cc99;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* KPI Section */
+.kpi-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.kpi-widget {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 200px;
+  margin: 10px;
+}

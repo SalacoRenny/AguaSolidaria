@@ -1,0 +1,80 @@
+  /*
+Estilos globales
+body {
+    background-color: #f7f9fc; 
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+  }
+  
+
+  .login-container, .signup-container {
+    margin-top: 100px; 
+    animation: fadeIn 1s ease-in-out; 
+  }
+
+
+  .login-card, .signup-card {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+
+  button {
+    border-radius: 5px;
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+
+  .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+
+  .text-danger {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+
+  .text-center a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .text-center a:hover {
+    text-decoration: underline;
+  }
+  
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+    */

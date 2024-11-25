@@ -1,0 +1,345 @@
+/* MainContent.css */
+
+.main-content * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content .body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1d;
+}
+
+.main-content .main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-image: url('../../assets/imagenCristo.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+.main-content .left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  gap: 15px;
+}
+
+.main-content .date-calendar-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.85);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  max-width: 500px;
+}
+
+.main-content .date-calendar-card h2 {
+  font-size: 1.8rem;
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.main-content .date-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.main-content .date-box .date-text {
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.main-content .calendar-box {
+  width: 100%;
+}
+
+.main-content .react-calendar {
+  width: 100%;
+  max-width: 500px; /* Incrementa el tamaño máximo */
+  height: auto; /* Permite que mantenga proporciones */
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-size: 1.2rem; /* Incrementa el tamaño del texto */
+}
+
+
+.main-content .react-calendar__navigation button {
+  color: #ffffff !important;
+  background-color: rgb(109, 85, 159) !important;
+  border: none !important;
+  font-size: 0.7rem !important;
+  font-weight: bold;
+  margin: 0 2px !important;
+  border-radius: 8px !important;
+  padding: 5px 10px !important;
+}
+
+.main-content .react-calendar__navigation button:hover {
+  background-color: rgba(109, 85, 159, 0.8);
+}
+
+.main-content .react-calendar__month-view__weekdays {
+  background-color: rgb(77, 190, 221) !important;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff !important;
+  padding: 10px 0 !important;
+}
+
+.main-content .react-calendar__tile {
+  background-color: #ffffff;
+  color: #333;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.main-content .react-calendar__tile:hover {
+  background-color: rgba(109, 85, 159, 0.8) !important;
+  color: #ffffff !important;
+}
+
+.main-content .react-calendar__tile--now {
+  background-color: rgb(77, 190, 221) !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  border-radius: 50% !important;
+}
+
+.main-content .react-calendar__tile--active {
+  background-color: rgb(247, 175, 83) !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+}
+
+.main-content .react-calendar__tile:disabled {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.main-content .react-calendar__month-view__days__day--weekend {
+  color: rgb(247, 175, 83);
+}
+
+
+.main-content .otbs-list {
+  background: rgba(25, 25, 35, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Soporte para Safari */
+  padding: 25px;
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el mensaje "No hay repartición" */
+}
+
+.main-content .otbs-list label {
+  color: #ffffff; /* Cambia el color del texto a blanco */
+}
+
+
+.main-content .otb-info {
+  width: 100%; /* Asegura que la tarjeta ocupe todo el ancho */
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(40, 40, 50, 0.9);
+  margin-bottom: 15px;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important; /* Alinea el contenido a la izquierda */
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-content .otb-info:hover {
+  transform: scale(1.02);
+  background: rgba(50, 50, 60, 1);
+}
+
+.main-content .otb-info h3 {
+  font-size: 1.2rem;
+  color: rgb(77, 190, 221); /* Celeste */
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-align: left; /* Alineación a la izquierda */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+.main-content .otb-details {
+  display: flex;
+  justify-content: flex-start; /* Alinea a la izquierda */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.main-content .otb-details p {
+  font-size: 1rem;
+  color: rgb(247, 175, 83); /* Naranja */
+  font-weight: 500;
+  margin: 0; /* Remueve cualquier margen adicional */
+  text-align: left; /* Asegura la alineación a la izquierda */
+  width: auto; /* Ajusta el ancho al contenido */
+}
+
+/* Estilo del mensaje de "No hay repartición de agua programada para hoy." */
+.main-content .otbs-list p {
+  color: #ffffff; /* Blanco */
+  font-size: 1.1rem;
+  text-align: center; /* Centra el texto */
+  font-weight: 500;
+  margin: 10px 0; /* Agrega espacio superior e inferior */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+/* Estilo para el Combo Box (select) */
+.main-content select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: rgba(40, 40, 50, 0.9);
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  margin-bottom: 15px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.main-content select:hover {
+  background-color: rgba(50, 50, 60, 1);
+  border-color: rgba(247, 175, 83, 0.8); /* Naranja */
+}
+
+.main-content select:focus {
+  background-color: rgba(50, 50, 60, 1);
+  border-color: rgb(77, 190, 221); /* Celeste */
+  outline: none;
+  box-shadow: 0 0 5px rgba(77, 190, 221, 0.8);
+}
+
+/* Estilo para el cuadro de texto de quejas (textarea) */
+.main-content textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: rgba(40, 40, 50, 0.9);
+  color: #e0e0e0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  resize: vertical;
+  transition: background-color 0.2s, border-color 0.2s;
+  margin-bottom: 15px;
+}
+
+.main-content textarea:hover {
+  background-color: rgba(50, 50, 60, 1);
+  border-color: rgba(247, 175, 83, 0.8); /* Naranja */
+}
+
+.main-content textarea:focus {
+  background-color: rgba(50, 50, 60, 1);
+  border-color: rgb(77, 190, 221); /* Celeste */
+  outline: none;
+  box-shadow: 0 0 5px rgba(77, 190, 221, 0.8);
+}
+
+/* Estilo del botón de enviar queja */
+.main-content button {
+  background-color: rgb(77, 190, 221); /* Celeste */
+  color: #ffffff;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 15px;
+}
+
+.main-content button:hover {
+  background-color: rgb(247, 175, 83); /* Naranja */
+  transform: scale(1.05);
+}
+
+/* Estilo del mensaje de "No puede registrar quejas para días que no sean hoy." */
+.main-content .otbs-list p {
+  color: #ffffff; /* Blanco */
+  font-size: 1.1rem;
+  text-align: center; /* Centra el texto */
+  font-weight: 500;
+  margin: 10px 0; /* Agrega espacio superior e inferior */
+  width: 100%; /* Asegura que ocupe el ancho completo */
+}
+
+
+/* Detalle del borde y espaciado en dispositivos pequeños */
+@media (max-width: 768px) {
+  .main-content .otbs-list {
+    max-height: none;
+    margin-top: 15px;
+    padding: 15px;
+  }
+
+  .main-content .otb-info {
+    padding: 15px;
+  }
+
+  .main-content .otb-info h3 {
+    font-size: 1rem;
+  }
+
+  .main-content .otb-details p {
+    font-size: 0.9rem;
+  }
+
+  .alert {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .alert-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .alert-danger {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  
+  
+} 

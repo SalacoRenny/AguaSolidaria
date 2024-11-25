@@ -1,0 +1,450 @@
+.calendar-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.calendar-container * {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+}
+
+.calendar-container {
+  background: url('../assets/img1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #f0f0f0;
+}
+
+/* Se mantiene un solo overflow en el contenedor general */
+.container-fluid {
+  height: 100vh;
+  padding: 20px;
+  overflow-y: auto; /* Habilitar scroll solo en el contenedor principal */
+}
+
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.col-lg-4, .col-md-5, .col-lg-8, .col-md-7 {
+  height: 100%;
+  overflow-y: auto; /* Permitir scroll solo si es necesario */
+}
+
+/* Estilos personalizados para el calendario */
+/* Fondo del calendario */
+.rbc-calendar {
+  background-color: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(109, 85, 159, 0.3); /* Sombra en violeta */
+  height: 100%;
+}
+
+/* Ocultar el scroll visible */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Cambiar el color de los días de la semana */
+.rbc-header {
+  background-color: rgba(77, 190, 221, 0.8); /* Celeste */
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Eventos */
+.rbc-event {
+  background-color: rgb(247, 175, 83); /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 2px 4px; /* Margen interno más pequeño */
+  font-size: 10px; /* Tamaño de texto más reducido */
+  border-radius: 4px; /* Bordes redondeados */
+  line-height: 1.1; /* Separación mínima entre líneas */
+  overflow: hidden; /* Evitar texto que desborde */
+  text-overflow: ellipsis; /* Agregar "..." si el texto es muy largo */
+  white-space: nowrap; /* Evitar saltos de línea */
+  height: auto; /* Permitir ajuste dinámico */
+}
+
+.rbc-month-view .rbc-event {
+  max-height: 55px; /* Limita la altura en la vista mensual */
+  overflow: hidden; /* Oculta texto adicional si es necesario */
+  white-space: nowrap; /* Impide que el texto salte a otra línea */
+  text-overflow: ellipsis; /* Agrega "..." si el texto es demasiado largo */
+}
+
+.rbc-event:hover {
+  background-color: #ff7f50; /* Un tono más oscuro de naranja */
+}
+
+/* Botones de navegación */
+.rbc-toolbar button {
+  background-color: rgb(77, 190, 221); /* Celeste */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  margin: 0 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rbc-toolbar button:hover {
+  background-color: rgb(109, 85, 159); /* Violeta */
+  transform: scale(1.05);
+}
+
+.rbc-toolbar button:focus {
+  outline: none;
+}
+
+/* Pestañas de vista (Month, Week, Day, Agenda) */
+.rbc-btn-group button {
+  background-color: rgb(109, 85, 159); /* Violeta */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: bold;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+
+.rbc-btn-group button:hover {
+  background-color: rgb(77, 190, 221); /* Celeste */
+}
+
+.rbc-btn-group button.rbc-active {
+  background-color: rgb(247, 175, 83); /* Naranja */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Título del calendario*/
+/* Estilo para el título de la fecha (Mes y Año) */
+.rbc-toolbar-label {
+  font-size: 1.8em; /* Tamaño más grande */
+  font-weight: bold;
+  color: rgb(77, 190, 221); /* Celeste */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  text-transform: capitalize;
+  padding: 5px 0;
+}
+
+
+/* Contenedor del título */
+.calendar-container .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 80px;
+  padding: 20px;
+  z-index: 1; /* Asegura que el título esté en un nivel superior */
+}
+/* Tarjeta de fondo */
+.calendar-container .title-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semitransparente */
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  z-index: -1; /* Asegura que el fondo esté detrás del texto */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para efecto de profundidad */
+}
+/* Estilo del título */
+.calendar-container .page-title {
+  font-size: 3.2em;
+  font-weight: bold;
+  color: #4ac1e0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+
+.calendar-container .page-title span {
+  color: #ffffff;
+}
+/* Estilo del input de búsqueda */
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid rgb(77, 190, 221); /* Celeste */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: rgb(247, 175, 83); /* Naranja */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Resultados de búsqueda */
+.search-result-item {
+  background-color: #fff;
+  border-left: 5px solid rgb(77, 190, 221); /* Celeste */
+  border-radius: 5px;
+  padding: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-result-item:hover {
+  box-shadow: 0 4px 8px rgba(109, 85, 159, 0.2); /* Violeta */
+}
+
+/* Modal para los eventos de cada fecha*/
+  /* Estilos generales del modal */
+.modal-content {
+  background-color: #f7f8fa; /* Fondo claro suave */
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: rgb(109, 85, 159); /* Violeta */
+}
+
+.modal-body {
+  padding: 1.5rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Tarjeta de evento dentro del modal */
+.event-detail {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(77, 190, 221, 0.3); /* Sombra celeste */
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.event-detail:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(109, 85, 159, 0.25); /* Sombra violeta */
+}
+
+.event-detail h5 {
+  font-size: 1.2rem;
+  color: rgb(77, 190, 221); /* Celeste */
+  margin: 0;
+}
+
+.event-detail p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0 0;
+}
+
+/* Estilos para el footer y botón de cerrar */
+.modal-footer {
+  border-top: none;
+  justify-content: center;
+  padding-top: 0;
+}
+
+.modal-footer .btn-secondary {
+  background-color: rgb(247, 175, 83); /* Naranja */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: rgb(224, 159, 75); /* Naranja oscuro */
+  transform: scale(1.05);
+}
+
+/* Estilos del Buscador */
+
+.search-bar input[type="text"] {
+  background-color: #333333; /* Cambia a un color más claro si es necesario */
+  color: #ffffff; /* Color del texto del input */
+  padding: 8px;
+  font-size: 1em;
+  margin: 5px 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search-bar input[type="text"]::placeholder {
+  color: #ffffff !important; /* Color del placeholder */
+  opacity: 0.7;
+}
+
+
+
+
+/* Optimización para pantallas pequeñas */
+@media (max-width: 768px) {
+  .rbc-calendar {
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .rbc-event {
+      font-size: 6px;
+  }
+
+  .search-bar, .search-results {
+      margin-bottom: 15px;
+  }
+
+  .col-lg-8, .col-md-7, .col-lg-4, .col-md-5 {
+      max-height: none;
+      height: auto;
+      overflow-y: auto;
+  }
+
+  .container-fluid {
+      padding: 10px; /* Reducir padding general */
+  }
+
+  /* Ajustes de título y fondo en pantallas pequeñas */
+  .calendar-container .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px; /* Ajuste de margen para evitar solapamiento */
+  }
+
+  .calendar-container .title-background {
+    max-width: 80%; /* Ancho completo en dispositivos móviles */
+    padding: 10px 20px; /* Ajuste de padding para un mejor ajuste */
+    background-color: rgba(0, 0, 0, 0.5); /* Aumentar ligeramente la opacidad */
+
+  }
+
+  .calendar-container .page-title {
+    font-size: 2em;
+    line-height: 1.2;
+    margin-top: 0;
+  }
+
+  .search-bar {
+    margin-bottom: 10px; /* Mueve la barra de búsqueda más abajo del título */
+  }
+
+  /* Input de búsqueda */
+  .search-bar input[type="text"] {
+    background-color: #333333; /* Cambia a un color más claro si es necesario */
+    color: #ffffff; /* Color del texto del input */
+    padding: 8px;
+    font-size: 1em;
+    margin: 5px 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .search-bar input[type="text"]::placeholder {
+    color: #ffffff !important; /* Color del placeholder */
+    opacity: 0.7;
+  }
+  
+  /* Resultados de búsqueda */
+  .search-result-item {
+    padding: 10px;
+    margin-bottom: 5px; /* Reducir el espacio entre tarjetas */
+    border-radius: 8px;
+  }
+
+  /* Botón "Ver en calendario" */
+  .search-result-item .btn-info {
+    width: 100%;
+    padding: 6px 0; /* Reducir altura del botón */
+    font-size: 0.85em; /* Tamaño de fuente más pequeño */
+    background-color: #0079a1; /* Tono más oscuro de celeste */
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+}
+
+/* Estilos específicos para la vista de tablet (iPad Pro 1024x1366) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Asegurar que el contenedor ocupe todo el ancho */
+  .container-fluid {
+    width: 100% !important; /* Forzar ancho completo */
+    padding: 0 20px;
+  }
+
+  /* Asegurar que la fila y las columnas ocupen el 100% del ancho */
+  .row {
+    width: 100% !important; /* Forzar el ancho completo en la fila */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Asegurar ancho completo de las columnas */
+  .col-lg-4, .col-md-5, .col-lg-8, .col-md-7 {
+    width: 90% !important; /* Forzar ancho completo en las columnas */
+    max-width: none; /* Quitar cualquier restricción de ancho */
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+
+  /* Título centrado */
+  .title-container {
+    max-width: 800px;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    color: #1f77d4;
+  }
+
+  /* Buscador y lista de OTBs con mayor ancho */
+  .search-bar, .search-results {
+    max-width: 800px; /* Ampliación del ancho */
+    width: 70% !important; /* Forzar ancho completo */
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+  .search-bar {
+    margin-bottom: 10px;
+  }
+  .search-results {
+    margin-bottom: 20px;
+  }
+
+  /* Contenedor del calendario */
+  .calendar-container {
+    max-width: 900px;
+    width: 100% !important;
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    text-align: center;
+    }
+}

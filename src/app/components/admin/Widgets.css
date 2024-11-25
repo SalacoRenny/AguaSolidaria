@@ -1,0 +1,25 @@
+.widget {
+  background-color: #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.overview .stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.quick-actions button,
+.pro-version button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #00cc99;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

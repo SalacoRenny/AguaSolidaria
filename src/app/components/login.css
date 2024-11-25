@@ -1,0 +1,104 @@
+.login-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegúrate de que el body y el html ocupen todo el alto */
+.login-page html, .login-page body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fondo con la imagen */
+.login-page .login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../assets/imagenCristo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  flex-grow: 1;
+}
+
+/* Estilos de la tarjeta de login */
+.login-page .login-card {
+  background: rgba(0, 0, 0, 0.8); /* Fondo un poco más oscuro */
+  padding: 40px; /* Más espacio interno */
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más profunda */
+  max-width: 400px; /* Limita el tamaño de la tarjeta */
+  width: 100%; /* Asegura que el contenido ocupe el 100% */
+}
+
+/* Título de la aplicación */
+.login-page .login-card h2 {
+  font-size: 40px; /* Aumenta el tamaño */
+  margin-bottom: 25px;
+  color: #ff416c; /* Usa el color del botón */
+  letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+/* Estilos de los campos de entrada */
+.login-page .login-card input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1); /* Un poco más transparente */
+  color: white;
+  font-size: 18px;
+  transition: background-color 0.3s ease; /* Efecto al hacer focus */
+}
+
+/* Estilos del logo */
+.login-page .login-logo {
+  width: 500px; /* Tamaño más grande */
+  margin-bottom: 25px; /* Ajusta el espacio debajo del logo */
+  border-radius: 15px; /* Puntas redondeadas */
+}
+
+.login-page .login-card input::placeholder {
+  color: #ddd; /* Placeholder más claro */
+}
+
+.login-page .login-card input:focus {
+  background: rgba(255, 255, 255, 0.2); /* Cambia el fondo al hacer focus */
+  outline: none;
+}
+
+/* Estilos del botón de login */
+.login-page .login-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b); /* Degradado lineal */
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.login-page .login-btn:hover {
+  background-color: #ff4b2b;
+}
+
+/* Mensaje de error */
+.login-page .error-message {
+  color: #ff4b2b;
+  margin-bottom: 15px;
+  font-weight: bold; /* Hace más destacable el mensaje */
+}
+
+/* Aumenta el espacio entre los elementos */
+.login-page .login-card input, .login-page .login-btn {
+  margin-bottom: 20px;
+}
